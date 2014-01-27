@@ -1,0 +1,23 @@
+<%= form_for bookmark do |f| %>
+
+<form role="form">
+    <div class="form-group">
+      <%= f.label :name, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, placeholder: "Every bookmark needs a name" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :body, class: 'form-control' %>
+      <div class="controls">
+        <%= f.text_field :body, placeholder: "Briefly describe the bookmark here" %>
+      </div>
+    </div>
+    </br>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit "Save", class: 'btn-success' %>
+      </div>
+    </div>
+  </form>
+<% end %>
