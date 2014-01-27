@@ -6,8 +6,8 @@ describe Bookmark do
     @book = Bookmark.new(title: "First", body: "This is the body")
 	end
 
-	describe "Attributes for for bookmarks"
-	  it "should have a title and body"
+	describe "Attributes for for bookmarks" do
+	  it "should have a title and body" do
 	  	bookmark = Bookmark.new
 		end
 
