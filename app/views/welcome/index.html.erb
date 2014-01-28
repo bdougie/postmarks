@@ -1,6 +1,13 @@
 <h1>Postmarks</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 
-<!--<% @bookmarks.each #do |bookmark| %>-->
+<div class="panel-body">
+	
+	<% bookmarks.each do |bookmark| %>
+	
+		<%= bookmark.body %>
+		<%= bookmark.name %>
 
-<!--<% #end %>-->
+	<% end %>
+
+</div>
