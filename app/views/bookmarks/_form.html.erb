@@ -1,10 +1,10 @@
-<%= form_for bookmark do |f| %>
+<%= form_for @bookmarks do |f| %>
 
 <form role="form">
     <div class="form-group">
-      <%= f.label :name, class: 'control-label' %>
+      <%= f.label :title, class: 'control-label' %>
       <div class="controls">
-        <%= f.text_field :name, placeholder: "Every bookmark needs a name" %>
+        <%= f.text_field :title, placeholder: "Every bookmark needs a name" %>
       </div>
     </div>
     <div class="control-group">

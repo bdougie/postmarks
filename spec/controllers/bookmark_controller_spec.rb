@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe BookmarkController do
+describe BookmarksController do
 
 end

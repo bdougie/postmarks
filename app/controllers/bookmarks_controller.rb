@@ -1,4 +1,4 @@
-class BookmarkController < ApplicationController
+class BookmarksController < ApplicationController
 
 	def index
 		@bookmarks = Bookmark.all 

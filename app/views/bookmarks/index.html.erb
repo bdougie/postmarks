@@ -1,10 +1,11 @@
 <div class="panel-body">
 	
 	<% @bookmarks.each do |bookmark| %>
-	
-		<%= bookmark.body %>
-		<%= bookmark.title %>
-
+	<ul>
+		<li><%= bookmark.title %></li>
+	<ul>
 	<% end %>
+
+	<%= render 'form' %>
 
 </div>
