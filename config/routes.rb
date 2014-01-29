@@ -1,13 +1,11 @@
 Postmarks::Application.routes.draw do
   
-  resources :bookmarks, only: [:index]
-
+  resources :bookmarks, only: [:index, :create, :show, :update, :destroy]
+  resources :tags, only: [:create, :update]
 
   root :to => 'welcome#index' 
 
-  match 'bookmarks' => 'bookmarks#index'
-
-  get "welcome/about" 
+  
 
    
 

@@ -1,11 +1,11 @@
 <div class="panel-body">
 	
-	<% @bookmarks.each do |bookmark| %>
 	<ul>
-		<li><%= bookmark.title %></li>
-	<ul>
-	<% end %>
+		<% @bookmarks.each do |bookmark| %>
+			<li><%= bookmark.title %></li>
+		<% end %>
+	</ul>
 <hr/>
-	<%= render 'form' %>
+<%= render partial: 'form', locals: { bookmark: Bookmark.new } %>
 
 </div>
