@@ -1,9 +1,12 @@
 Postmarks::Application.routes.draw do
-  resources :bookmarks
+  resources :bookmarks do 
+  
 
   root :to => 'welcome#index' 
 
-   get "welcome/about"
+  match 'bookmarks' => 'bookmarks#index'
+
+   
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
