@@ -1,8 +1,8 @@
-Postmarks
+#Postmarks
 
 Based off the Blocmark sample under the Bloc.io mentorship. This was not created from a tutorial but made from actual skill and detemination. 
 
-##Requirements provided
+#Requirements provided
 
 As a user, I want to be able to sign in and out of the Blocmarks application.
 As a user, I want to be able to email a URL to Blocmarks and have it saved in the Blocmarks database.
@@ -19,8 +19,11 @@ As a user, I want to see a list of bookmarks on my personal index that I've adde
 *Need a gem to catch user #hashes and associate emails
  
 *Blockmarks needs to have Users
+
 *User will have the ability to send bookmarks from email
+
 *As well as post inline.
+
 *Each #hash will be a topic
  
 
