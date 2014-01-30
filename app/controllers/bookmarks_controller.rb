@@ -18,6 +18,7 @@ class BookmarksController < ApplicationController
 
 	def create
 		@bookmark = Bookmark.new(params[:bookmark])
+		@bookmark.build_bookmark(:tags)
 		if @bookmark.save
 			redirect_to bookmarks_path, notice: "Bookmark was saved successfully"
 		else

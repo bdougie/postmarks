@@ -4,6 +4,8 @@
 		<% @bookmarks.each do |bookmark| %>
 		<div class="panel-body">
 			<%= bookmark.title %>
+			[<%=	bookmark.body %>]
+			<% bookmark.tags %>
 		</div>
 		<% end %>
 	

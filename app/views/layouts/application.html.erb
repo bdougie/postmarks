@@ -7,23 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+ 
+ <div class="container">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <ul class="nav nav-tabs">
+        
+        <li><%= link_to "Postmarks", "#" %></li>
+        <li><%= link_to "bookmark", bookmarks_path  %></li>
 
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
-    <ul class="nav nav-tabs">
+      </ul>
       
-      <li><%= link_to "Postmarks", "#" %></li>
-      <li><%= link_to "bookmark", bookmarks_path  %></li>
-
-    </ul>
     </div>
   </div>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dimiss="alert">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:error] %>
+      <div class="alert alert-error">
+        <button type="button" class="close" data-dimiss="alert">&times;</button>
+        <%= flash[:error] %>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert">
+        <button type="button" class="close" data-dimiss="alert">&times;</button>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+  <%= yield %>
 </div>
-
-<%= flash[:error] if flash[:error] %>
-
-<%= yield %>
-
 </body>
 </html>

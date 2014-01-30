@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(:version => 20140129115312) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "bookmark_tags", :force => true do |t|
+    t.integer "bookmarks_id"
+    t.integer "tags_id"
+  end
+
   create_table "tags", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false

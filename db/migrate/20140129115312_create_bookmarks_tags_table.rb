@@ -1,7 +1,8 @@
 class CreateBookmarksTagsTable < ActiveRecord::Migration
-  def up
-  end
+  
+  create_table :bookmark_tags do |t|
+      t.belongs_to :bookmarks
+      t.belongs_to :tags
+    end
 
-  def down
-  end
 end
