@@ -1,8 +1,8 @@
 class CreateBookmarksTagsTable < ActiveRecord::Migration
   
   create_table :bookmark_tags do |t|
-      t.belongs_to :bookmarks
-      t.belongs_to :tags
+      t.belongs_to :bookmark
+      t.belongs_to :tag
     end
 
 end

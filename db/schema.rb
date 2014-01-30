@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(:version => 20140129115312) do
   end
 
   create_table "bookmark_tags", :force => true do |t|
-    t.integer "bookmarks_id"
-    t.integer "tags_id"
+    t.integer "bookmark_id"
+    t.integer "tag_id"
   end
 
   create_table "tags", :force => true do |t|
