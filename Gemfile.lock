@@ -181,7 +181,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
+  bootstrap-sass (~> 3.0.3)
   cancan
   capybara
   carrierwave
