@@ -10,6 +10,7 @@ class BookmarksController < ApplicationController
 
 	def new
 		@bookmark = Bookmark.new
+		@tag = Tag.new
 	end
 
 	def edit
@@ -18,7 +19,8 @@ class BookmarksController < ApplicationController
 
 	def create
 		@bookmark = Bookmark.new(params[:bookmark])
-		@bookmark.build_bookmark(:tags)
+		@tags = Tag.find_and_create_by_name[:tags]
+
 		if @bookmark.save
 			redirect_to bookmarks_path, notice: "Bookmark was saved successfully"
 		else

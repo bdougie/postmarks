@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(:version => 20140129115312) do
     t.integer "tag_id"
   end
 
+  create_table "bookmarks_tags", :force => true do |t|
+    t.integer "bookmark_id"
+    t.integer "tag_id"
+  end
+
   create_table "tags", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
