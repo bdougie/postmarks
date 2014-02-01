@@ -2,6 +2,7 @@ class BookmarksController < ApplicationController
 
 	def index
 		@bookmarks = Bookmark.all 
+		@tags =Tag.all
 	end
 
 	def show

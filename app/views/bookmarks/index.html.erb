@@ -5,8 +5,10 @@
 		<div class="panel-body">
 			<%= bookmark.title %>
 			[<%=	bookmark.body %>]
-			<% bookmark.tags %>
 		</div>
+		<% end %>
+		<% @tags.each do |tag| %>
+			<%= tag.name %>
 		<% end %>
 	
 </div>
