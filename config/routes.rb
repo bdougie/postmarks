@@ -1,7 +1,6 @@
 Postmarks::Application.routes.draw do
-  
-  resources :bookmarks, only: [:index, :create, :show, :update, :destroy]
-  resources :tags, only: [:create, :update]
+  get 'tags/:tag', to: 'bookmarks#index', as: :tag
+  resources :bookmarks, only: [:index, :create, :show, :update, :destroy, :edit]
 
   root :to => 'welcome#index' 
 

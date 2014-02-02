@@ -1,8 +1,11 @@
 class BookmarksController < ApplicationController
 
 	def index
-		@bookmarks = Bookmark.all 
-		@tags =Tag.all
+		if params[:tag]
+			@bookmarks = Bookmark.tagged_with(params[:tag])
+		else
+			@bookmarks = Bookmark.all 
+		end
 	end
 
 	def show
@@ -11,7 +14,6 @@ class BookmarksController < ApplicationController
 
 	def new
 		@bookmark = Bookmark.new
-		@tag = Tag.new
 	end
 
 	def edit
@@ -20,7 +22,6 @@ class BookmarksController < ApplicationController
 
 	def create
 		@bookmark = Bookmark.new(params[:bookmark])
-		@tags = Tag.new.where[:tags => nil ]
 
 		if @bookmark.save
 			redirect_to bookmarks_path, notice: "Bookmark was saved successfully"
@@ -31,8 +32,28 @@ class BookmarksController < ApplicationController
 	end
 
 	def update
+		@bookmark = Bookmark.find(params[:id])
+		if @bookmark.update_attributes(params[:bookmark])
+			redirect_to bookmarks_path, notice: "Bookmark was updated successfully."
+		else
+			flash[:error] = "There was error updating the Bookmark, not sure what though"
+			render :edit
+		end
 	end
 
+	def destroy
+		@bookmark = Bookmark.find(params[:id])
+		name = @bookmark.title
+
+    if @bookmark.destroy
+      flash[:notice] = "\"#{name}\" bookmark was deleted successfully."
+      redirect_to bookmarks_path
+    else
+      flash[:error] = "There was an error deleting the topic."
+      render :index
+    end
+
+	end
 
 
 end

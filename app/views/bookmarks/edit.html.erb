@@ -1,0 +1,32 @@
+<h1>Edit Topic</h1>
+
+<%= form_for @bookmark do |f| %>
+
+  <form role="form">
+    <div class="form-group">
+      <%= f.label :title %>
+      <div class="controls">
+        <%= f.text_field :title, placeholder: "Every bookmark needs a name", class: 'form-control' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :body %>
+      <div class="controls">
+        <%= f.text_area :body, rows: 4, class: 'form-control' %>
+      </div>
+    </div></br>
+    <div class="control-group">
+      <%= f.label :tag_list, "Tags (seperated by commas)" %>
+      <div class="controls">
+        <%= f.text_field :tag_list, class: 'form-control' %>
+      </div>
+    </div>
+    </br>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit "Save", class: 'btn-primary' %>
+      </div>
+    </div>
+  </form>
+
+<% end %>

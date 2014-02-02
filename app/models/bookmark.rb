@@ -1,6 +1,5 @@
 class Bookmark < ActiveRecord::Base
-   attr_accessible :title, :body, :tags, :tags_attributes
-
-  has_and_belongs_to_many :tags
+   attr_accessible :title, :body, :tag_list
+   acts_as_taggable
    
 end
