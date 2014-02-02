@@ -42,4 +42,5 @@ gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'acts-as-taggable-on'
+gem 'bcrypt-ruby', '~> 3.1.2'
 

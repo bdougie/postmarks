@@ -1,5 +1,11 @@
 <div class="panel-body">
 <div class="box panel panel-default">	
+	<div class="jumbotron">
+		<% tag_cloud Bookmark.tag_counts, %w{s m l} do |tag, css_class| %>
+			<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+		<% end %>
+	</div>
+		
 	
 		<% @bookmarks.each do |bookmark| %>
 		<div class="panel-body">

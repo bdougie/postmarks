@@ -1,4 +1,11 @@
 Postmarks::Application.routes.draw do
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: "sessions/new", as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  resources :users
+
+
   get 'tags/:tag', to: 'bookmarks#index', as: :tag
   resources :bookmarks, only: [:index, :create, :show, :update, :destroy, :edit]
 
