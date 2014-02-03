@@ -1,9 +1,9 @@
 Postmarks::Application.routes.draw do
-  get 'signup', to: 'users#new', as: 'signup'
-  get 'login', to: "sessions/new", as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'signup' => 'users#new' 
+  get 'login' => "sessions#new" 
+  get 'logout' => 'sessions#destroy'
 
-  get 'about', to: 'welcome#about', as: 'about'
+  get 'about' => 'welcome#about'
 
   resources :users
 
