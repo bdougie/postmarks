@@ -7,12 +7,21 @@
         <%= f.text_field :title, placeholder: "Every bookmark needs a name", class: 'form-control' %>
       </div>
     </div>
+
+    <div class="control-group">
+      <%= f.label :url, "Add link here" %>
+      <div class="controls">
+        <%= t.text_field placeholder: "'include 'http://'", class: 'form-control' %>
+      </div>
+    </div>
+
     <div class="control-group">
       <%= f.label :body %>
       <div class="controls">
         <%= f.text_area :body, rows: 4, placeholder: "Briefly describe the bookmark here", class: 'form-control' %>
       </div>
     </div></br>
+
     <div class="control-group">
       <%= f.label :tag_list, "Tags (seperated by commas)" %>
       <div class="controls">
@@ -20,6 +29,7 @@
       </div>
     </div>
     </br>
+
     <div class="control-group">
       <div class="controls">
         <%= f.submit "Save", class: 'btn-primary' %>
