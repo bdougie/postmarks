@@ -11,7 +11,13 @@
 		<div class="panel-body">
 			<%= bookmark.title %>
 			[<%=	bookmark.body %>]
-			
+				<% if bookmark.url %>
+				<%= link_to bookmark.url, bookmark.url %>
+				<% end %>
+
+		
+		
+
 			<!--<p>tags: <%= bookmark.tag_list  %> </p>-->
 			<p>Tags: <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 			<p>
