@@ -3,6 +3,8 @@ Postmarks::Application.routes.draw do
   get 'login' => 'sessions#new' 
   get 'logout' => 'sessions#destroy'
 
+  post 'login' => 'sessions#create'
+
   get 'about' => 'welcome#about'
 
   resources :users

@@ -15,6 +15,4 @@
 //= require bootstrap
 //= require_tree .
 
-$('#myCollapsible').collapse({
-  toggle: false
-})
+
