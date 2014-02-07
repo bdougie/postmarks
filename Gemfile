@@ -33,7 +33,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'jquery-rails'
 gem 'redcarpet'
 gem 'faker'
 # gem 'devise'
