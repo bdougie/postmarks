@@ -30,6 +30,7 @@
 </div>
 
 <hr/>
+<% if current_user %>
 <%= render partial: 'form', locals: { bookmark: Bookmark.new } %>
-
+<% end %>
 </div>

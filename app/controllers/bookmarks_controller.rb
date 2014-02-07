@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-	before_filter :authorize, only: [:edit, :update, :destroy]
+	before_filter :authorize, only: [:create, :edit, :update, :destroy]
 	
 	def index
 		if params[:tag]
