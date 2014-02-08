@@ -13,6 +13,14 @@
         <%= f.text_field :title, placeholder: "Every bookmark needs a name", class: 'form-control' %>
       </div>
     </div>
+
+    <div class="control-group">
+      <%= f.label :url, "Add link here" %>
+      <div class="controls">
+        <%= f.text_field :url, placeholder: "'http:// is required'", class: 'form-control' %>
+      </div>
+    </div>
+
     <div class="control-group">
       <%= f.label :body %>
       <div class="controls">

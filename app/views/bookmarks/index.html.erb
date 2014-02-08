@@ -9,12 +9,12 @@
 	
 		<% @bookmarks.each do |bookmark| %>
 		<div class="panel-body">
+			<% if bookmark.url %>
+				<%= link_to image_tag(bookmark.thumbnail_url), bookmark.url %>
+			<% end %><br/>
 			<%= bookmark.title %>
 			[<%=	bookmark.body %>]
 				
-				<% if bookmark.url %>
-				<%= link_to bookmark.url, bookmark.url %>
-				<% end %>
 
 			<!--<p>tags: <%= bookmark.tag_list  %> </p>-->
 			<p>Tags: <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
