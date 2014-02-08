@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-	before_filter :authorize, only: [:create, :edit, :update, :destroy]
+	before_filter :authorize, only: [:edit, :update, :destroy]
 	
 	def index
 		if params[:tag]
@@ -23,6 +23,9 @@ class BookmarksController < ApplicationController
 
 	def create
 		@bookmark = Bookmark.new(params[:bookmark])
+		# @bookmark.generate_preview
+		embedly = Embedly::API.new(url: @bookmark.url)
+		@bookmark.thumbnail_url = embedly.first.thumbnail_url
 
 		if @bookmark.save
 			redirect_to bookmarks_path, notice: "Bookmark was saved successfully"

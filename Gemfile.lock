@@ -31,7 +31,7 @@ GEM
     acts-as-taggable-on (3.0.1)
       rails (>= 3, < 5)
     arel (3.0.3)
-    bcrypt-ruby (3.1.2)
+    bcrypt-ruby (3.0.1)
     bootstrap-sass (3.0.3.0)
       sass (~> 3.2)
     builder (3.0.4)
@@ -67,6 +67,9 @@ GEM
       railties (>= 3.0.0)
     faker (1.2.0)
       i18n (~> 0.5)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -155,7 +158,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  bcrypt-ruby
+  bcrypt-ruby (~> 3.0.0)
   bootstrap-sass (~> 3.0.3)
   cancan
   capybara
@@ -164,6 +167,7 @@ DEPENDENCIES
   embedly (~> 1.9.1)
   factory_girl_rails (~> 4.0)
   faker
+  figaro
   jquery-rails
   mini_magick
   pg
