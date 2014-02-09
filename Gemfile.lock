@@ -70,7 +70,11 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    griddler (0.6.3)
+      htmlentities
+      rails (>= 3.2.0)
     hike (1.2.3)
+    htmlentities (4.3.1)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (3.1.0)
@@ -168,6 +172,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   faker
   figaro
+  griddler
   jquery-rails
   mini_magick
   pg
