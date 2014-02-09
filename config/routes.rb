@@ -9,9 +9,10 @@ Postmarks::Application.routes.draw do
 
   resources :users
 
-
   get 'tags/:tag', to: 'bookmarks#index', as: :tag
   resources :bookmarks, only: [:index, :create, :show, :update, :destroy, :edit]
+
+  post '/email_processor' => 'griddler/emails#create'
 
   root :to => 'welcome#index' 
 

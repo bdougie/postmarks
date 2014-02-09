@@ -33,6 +33,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'redcarpet'
 gem 'faker'
 # gem 'devise'
@@ -45,3 +47,4 @@ gem 'bcrypt-ruby', "~> 3.0.0"
 gem "embedly", "~> 1.9.1"
 gem 'figaro'
 gem 'griddler'
+gem 'masonry-rails'
