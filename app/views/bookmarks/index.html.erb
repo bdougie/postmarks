@@ -1,39 +1,40 @@
 <div class="panel-body">
-<div class="box panel panel-default">	
-	<div class="jumbotron">
-		<% tag_cloud Bookmark.tag_counts, %w{s m l} do |tag, css_class| %>
-			<%= link_to tag.name, tag_path(tag.name), class: css_class %>
-		<% end %>
-	</div>
-		
-		<% @bookmarks.each do |bookmark| %>
-			<div id="masonry-container" class="transitions-enabled">
-				<div class="box col3">
-				<% if bookmark.url %>
-					<%= link_to image_tag(bookmark.thumbnail_url), bookmark.url %><br/>
-					<!--#Title-->
-					<strong><%= bookmark.title_url %></strong>
-				<% end %><br/>
-				
-				
-				<!--#Description-->
-				[<%=	bookmark.body %>]
-				<!--#tags-->
-				<p>Tags: <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
-				<!--#links-->
-				<p>
-					<%= link_to "Edit", edit_bookmark_path(bookmark) %> 
-					<%= link_to "Delete", bookmark, method: :delete, confirm: 'Are you sure you want to delete this post?' %>
-				</p>
-				</div>
+	<div class="box panel panel-default">	
+		<div class="jumbotron">
+			<% tag_cloud Bookmark.tag_counts, %w{s m l} do |tag, css_class| %>
+				<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+			<% end %>
+		</div>
+			
+			<% @bookmarks.each do |bookmark| %>
+				<div id="masonry-container" class="transitions-enabled">
+					<div class="box panel panel-default">
+					<% if bookmark.url %>
+						<%= link_to image_tag(bookmark.thumbnail_url), bookmark.url %><br/>
+						<!--#Title-->
+					</div>
+						<strong><%= bookmark.title_url %></strong>
+					<% end %><br/>
+					
+					
+					<!--#Description-->
+					[<%=	bookmark.body %>]
+					<!--#tags-->
+					<p>Tags: <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+					<!--#links-->
+					<p>
+						<%= link_to "Edit", edit_bookmark_path(bookmark) %> 
+						<%= link_to "Delete", bookmark, method: :delete, confirm: 'Are you sure you want to delete this post?' %>
+					</p>
+					</div>
 
-			</div>
-		<% end %>
-	
-</div>
+				</div>
+			<% end %>
+		
+	</div>
 
 <hr/>
-<% #if current_user %>
-<%= render partial: 'form', locals: { bookmark: Bookmark.new } %>
-<% #end %>
+	<% #if current_user %>
+	<%= render partial: 'form', locals: { bookmark: Bookmark.new } %>
+	<% #end %>
 </div>
