@@ -23,9 +23,6 @@ class BookmarksController < ApplicationController
 
 	def create
 		@bookmark = Bookmark.new(params[:bookmark])
-		# @bookmark.generate_preview (refactoring)
-		embedly = Embedly::API.new(url: @bookmark.url)
-		#@bookmark.thumbnail_url = embedly.first.thumbnail_url
 
 		if @bookmark.save
 			redirect_to bookmarks_path, notice: "Bookmark was saved successfully"
