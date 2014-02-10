@@ -1,11 +1,12 @@
 class AddBookmarksToTable < ActiveRecord::Migration
+	def change
+	  create_table :bookmarks do |t|
 
-  create_table :Bookmarks do |t|
+		  t.string :title
+		  t.text :bodys
 
-  t.string :title
-  t.text :body
-
-  t.timestamps
+		  t.timestamps
+		end
 	end
 end
 
