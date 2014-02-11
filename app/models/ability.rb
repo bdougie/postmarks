@@ -1,6 +1,6 @@
 class Ability
 	include Cancan::Ability
-
+=begin
 	def initialize(user)
 
 		user ||= User.new
@@ -14,5 +14,5 @@ class Ability
 
     can :read, Bookmark
   end
-
+=end
 end
