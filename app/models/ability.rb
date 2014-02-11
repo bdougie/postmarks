@@ -13,6 +13,6 @@ class Ability
     end
 
     can :read, Bookmark
-
+  end
 
 end
