@@ -1,5 +1,7 @@
+=begin
 require 'spec_helper'
 
-describe Tag do
+describe tag do
   pending "add some examples to (or delete) #{__FILE__}"
 end
+=end

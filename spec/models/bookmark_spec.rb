@@ -1,3 +1,4 @@
+=begin
 require 'spec_helper'
 
 describe Bookmark do	
@@ -9,3 +10,4 @@ describe Bookmark do
 
   end
 end
+=end
