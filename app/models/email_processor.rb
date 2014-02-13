@@ -1,12 +1,13 @@
 class EmailProcessor
 	def self.processor(email)
+  	Bookmark.create
+		
 		# all of your application-specific code here - creating models,
 		# processing reports, etc
-		# user = User.find_by_email(email.from)
+		#user = User.find_by_email(email.from)
   #   bookmark = user.bookmarks.new
-  #   bookmark.url = email.subject
+    Bookmark.url = email.subject
   #   bookmark.description = email.body
   #   bookmark.save
-  	Bookmark.create
 	end
 end
