@@ -10,7 +10,11 @@ Postmarks::Application.routes.draw do
   resources :users
 
   get 'tags/:tag', to: 'bookmarks#index', as: :tag
-  resources :bookmarks, only: [:index, :create, :show, :update, :destroy, :edit]
+  
+  resources :bookmarks, only: [:index, :create, :show, :update, :destroy, :edit] do
+    match '/up-vote', to: 'votes#up_vote', as: :up_vote
+    match '/down-vote', to: 'votes#down_vote', as: :down_vote
+  end
 
   post '/email_processor' => 'griddler/emails#create'
 

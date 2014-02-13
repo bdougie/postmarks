@@ -9,4 +9,8 @@ describe EmailProcessor do
 		expect(Bookmark.count).to eq(1)
 	end
 
+	pending 'should save url as in bookmark'
+		
+
+
 end

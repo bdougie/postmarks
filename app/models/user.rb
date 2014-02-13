@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password_digest, :password_confirmation, :password
 
   validates_uniqueness_of :email
+
+  has_many :votes, dependent: :destroy
 end
