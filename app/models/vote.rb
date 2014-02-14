@@ -4,4 +4,8 @@ class Vote < ActiveRecord::Base
   attr_accessible :value, :bookmark
 
   validates :value, inclusion: { in: [-1,1], message: "%{value} is not a valid vote."}
+
+  def update_bookmark
+  	self.bookmark.update_rank
+  end
 end

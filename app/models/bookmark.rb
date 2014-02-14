@@ -4,6 +4,8 @@ class Bookmark < ActiveRecord::Base
    has_many :votes, dependent: :destroy
    before_save :save_embedly_data
 
+   default_scope order('rank DESC')
+
 
    def save_embedly_data
       embedly = Embedly::API.new.oembed( url: self.url).first
@@ -22,6 +24,19 @@ class Bookmark < ActiveRecord::Base
    def points
       self.votes.sum(:value).to_i     
    end 
+
+   def update_rank
+      age = (self.created_at - Time.new(1970,1,1)) / 86400
+      new_rank = points + age
+
+      self.update_attribute(:rank, new_rank)
+   end
+
+   private
+
+   def create_vote
+      self.user.votes.create(value: 1, bookmark: self)
+   end
 
    
    # def thumbnail_url

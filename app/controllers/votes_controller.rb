@@ -15,7 +15,7 @@ class VotesController < ApplicationController
 
 	def setup
 		@bookmark = Bookmark.find(params[:bookmark_id])
-		#authorize! :create, Vote, message: "You need o be a user to do that."
+		authorize! :create, Vote, message: "You need to be a user to do that."
 
 		@vote = @bookmark.votes.where(user_id: current_user.id).first
 	end
