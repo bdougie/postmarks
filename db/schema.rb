@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140210224739) do
+ActiveRecord::Schema.define(:version => 20140214225922) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20140210224739) do
     t.datetime "updated_at",    :null => false
     t.string   "url"
     t.string   "thumbnail_url"
+    t.float    "rank"
+    t.integer  "user_id"
   end
 
   create_table "taggings", :force => true do |t|
@@ -45,6 +47,18 @@ ActiveRecord::Schema.define(:version => 20140210224739) do
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "role"
   end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "value"
+    t.integer  "user_id"
+    t.integer  "bookmark_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "votes", ["bookmark_id"], :name => "index_votes_on_bookmark_id"
+  add_index "votes", ["user_id"], :name => "index_votes_on_user_id"
 
 end

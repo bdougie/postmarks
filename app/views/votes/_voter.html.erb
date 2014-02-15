@@ -1,8 +1,7 @@
 <div class="vote-arrows pull-left">
 	<% if can? :create, Vote %>
-		<div><%= link_to " ", bookmark_up_vote(bookmark), class: 'icon-chevron-up' %></div>
+		<div><%= link_to " ", bookmark_up_vote_path(bookmark), class: 'glyphicon glyphicon-chevron-up'  %></div>
 		<div><strong><%= bookmark.points %></strong></div>
-		<div><%= bookmark.points %></strong></div>
-		<div><%= link_to " ", bookmark_down_vote(bookmark), class: 'icon-chevron-down' %></div>
+		<div><%= link_to " ", bookmark_down_vote_path(bookmark), class: 'glyphicon glyphicon-chevron-down' %></div>
 	<% end %>
 </div>

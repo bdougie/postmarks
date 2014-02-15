@@ -6,6 +6,8 @@ class Bookmark < ActiveRecord::Base
 
    default_scope order('rank DESC')
 
+   belongs_to :user
+
 
    def save_embedly_data
       embedly = Embedly::API.new.oembed( url: self.url).first

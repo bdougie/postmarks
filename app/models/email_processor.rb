@@ -1,13 +1,20 @@
 class EmailProcessor
-	def self.processor(email)
-  	Bookmark.create
+	def self.process(email)
+  	bookmark = Bookmark.new
 		
 		# all of your application-specific code here - creating models,
 		# processing reports, etc
-		#user = User.find_by_email(email.from)
-  #   bookmark = user.bookmarks.new
-    Bookmark.url = email.subject
-  #   bookmark.description = email.body
-  #   bookmark.save
+		if user = User.find_by_email(email.from)
+			bookmark.user = user
+	    bookmark.url = email.subject
+	    email.subject.split(' ').find do |t|
+	    	t.start_with?('http')
+	    end
+	    bookmark.save!
+	  	bookmark
+	  end
 	end
 end
+
+
+# "hello this http://google.com is my link"

@@ -14,7 +14,11 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
-//= require masonry/jquery.masonry
-//= require jquery.turbolinks
 
+// $(function(){
 
+// 	$('#container').masonry({
+// 	  columnWidth: 200,
+// 	  itemSelector: '.item'
+// 	});
+// }
