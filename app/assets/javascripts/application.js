@@ -15,10 +15,8 @@
 //= require bootstrap
 //= require_tree .
 
-// $(function(){
-
-// 	$('#container').masonry({
-// 	  columnWidth: 200,
-// 	  itemSelector: '.item'
-// 	});
-// }
+$(function(){
+  $('#container').imagesLoaded(function(){
+    $('#container').masonry()
+  })
+})

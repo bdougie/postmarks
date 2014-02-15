@@ -41,4 +41,3 @@ gem 'bcrypt-ruby', "~> 3.0.0"
 gem "embedly", "~> 1.9.1"
 gem 'figaro'
 gem 'griddler'
-# gem 'masonry-rails'
