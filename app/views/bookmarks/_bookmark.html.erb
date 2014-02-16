@@ -4,7 +4,7 @@
 		<% if bookmark.url %>
 			<!--#Title-->
 			<strong><%= bookmark.title %></strong><br/>
-			<%= link_to image_tag(bookmark.thumbnail_url, :size => "200x200" ), bookmark.url%><br/>
+			<%= link_to image_tag(bookmark.thumbnail_url, :size => "250x250" ), bookmark.url%><br/>
 		<% end %>
 	</div>
 		
@@ -14,6 +14,9 @@
 		<!--#Description-->
 		[<%=	bookmark.body %>]
 		<!--#tags-->
+
+		<%= render partial: 'favorites/favorite', locals: {bookmark: bookmark} %>
+		
 		<p>Tags: <%= raw bookmark.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 		<!--#links-->
 		<p>

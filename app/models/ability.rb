@@ -9,7 +9,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.role? :member
          can :manage, Bookmark, :user_id => user.id
-         # can :manage, Favorite, user_id: user.id
+         can :manage, Favorite, user_id: user.id
          can :create, Vote
     end
 

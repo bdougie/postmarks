@@ -10,10 +10,9 @@ class User < ActiveRecord::Base
 
 
   def favorited(bookmark)
-    self.favoriteds.where(bookmark_id: bookamark_id).first
+    self.favorites.where(bookmark_id: bookamark_id).first
   end
   
-
 
 	ROLES = %w[member admin]
   def role?(base_role)
