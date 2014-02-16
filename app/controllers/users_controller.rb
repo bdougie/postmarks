@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@bookmarks = @user.bookmarks.visible_to(current_user)
 	end
 
 	def edit
@@ -24,6 +25,12 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
+		if @bookmark.update_attributes(params[:bookmark])
+			redirect_to @bookmark
+		else
+			flash[:error] = "Error saving bookmark. Please try again"
+			render :edit
+		end
 	end
 
 end
