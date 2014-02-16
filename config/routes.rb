@@ -10,7 +10,7 @@ Postmarks::Application.routes.draw do
   get 'tags/:tag', to: 'bookmarks#index', as: :tag
 
 
-  resources :users
+  resources :users, only: [:show] #route for users#show
 
   
     resources :bookmarks, only: [:index, :create, :show, :update, :destroy, :edit] do

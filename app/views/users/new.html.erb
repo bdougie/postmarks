@@ -1,11 +1,11 @@
 <h1>Sign up</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for User.all do |f| %>
 		<% if @user.errors.any? %>
 			<div class="error_messages">
 				<h2>Form is invalid</h2>
 				<ul>
-					<% @users.errors.full_messages.each do |message| %>
+					<% @user.errors.full_messages.each do |message| %>
 						<li><%= message %></li>
 					<% end %>
 				</ul>
@@ -19,6 +19,13 @@
 			<%= f.text_field :email, class: 'form-control'%>
 			</div>
     </div>
+
+    <div class="field">
+			<%= f.label :name, 'User name' %><br />
+      <div class="controls">
+			<%= f.text_field :name, class: 'form-control' %>
+			</div>
+		</div>
 	
 		<div class="field">
 			<%= f.label :password %><br />

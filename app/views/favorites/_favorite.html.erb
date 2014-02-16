@@ -2,11 +2,11 @@
 	<div class="favorite">
 		<% if favorite = current_user.favorited(bookmark) %>
 			<%= link_to [bookmark], class: 'btn btn-small', method: :delete do %>
-		<i class="icon-star"> </i>&nbsp; Unfavorite
+		<i class="glyphicon glyphicon-star"> </i>&nbsp; Unfavorite
 			<% end %>
 		<% else %>
 			<%= link_to [bookmark, Favorite.new], class: 'btn btn-small', method: :post do %>
-				<i class="icon-star"> </i>&nbsp; Favorite
+				<i class="glyphicon glyphicon-star"> </i>&nbsp; Favorite
 			<% end %>
 		<% end %>
 	</div>
