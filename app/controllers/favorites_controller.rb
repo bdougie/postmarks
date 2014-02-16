@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
 
 	def create
 		authorize! :create, Favorite, message: "You cannot do that"
-		@bookmark = bookmark.find(params[:bookmark_id])
+		@bookmark = Bookmark.find(params[:bookmark_id])
 
 		favorite = current_user.favorites.create(bookmark: @bookmark)
 		if favorite.valid?
@@ -16,7 +16,7 @@ class FavoritesController < ApplicationController
 
 	def destroy
 		authorize! :destroy, @favorite, message: "You cannot do that"
-		@bookmark = bookmark.find(params[:bookmark_id])
+		@bookmark = Bookmark.find(params[:bookmark_id])
 		@favorite = current_user.favorites.find(params[:id])
 
 		if @favorite.destroy

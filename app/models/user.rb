@@ -7,10 +7,11 @@ class User < ActiveRecord::Base
 
   has_many :votes, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
 
   def favorited(bookmark)
-    self.favorites.where(bookmark_id: bookamark_id).first
+    self.favorites.where(bookmark_id: bookmark).first
   end
   
 
