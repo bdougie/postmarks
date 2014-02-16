@@ -8,7 +8,13 @@ class User < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
 
+
+  def favorited(bookmark)
+    self.favoriteds.where(bookmark_id: bookamark_id).first
+  end
   
+
+
 	ROLES = %w[member admin]
   def role?(base_role)
   	if role.nil?

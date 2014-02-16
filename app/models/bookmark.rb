@@ -1,7 +1,10 @@
 class Bookmark < ActiveRecord::Base
    attr_accessible :title, :body, :tag_list, :url, :thumbnail_url
    acts_as_taggable
+   
    has_many :votes, dependent: :destroy
+   has_many :favorites, dependent: :destroy
+
    before_save :save_embedly_data
 
    default_scope order('rank DESC')
