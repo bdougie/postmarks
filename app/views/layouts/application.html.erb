@@ -10,7 +10,6 @@
 </head>
 
 <body>
- 
  <div class="container">
   <div class="navbar">
     <div class="navbar-inner">
@@ -18,7 +17,10 @@
         
         <li><%= link_to "Postmarks", "#" %></li>
         <li><%= link_to "View Bookmarks", bookmarks_path  %></li>
-        <li><%= link_to "Saved Bookmarks", current_user %></li>
+        <li><%= link_to "Saved Bookmarks", '#' %></li>
+        <% if current_user %>
+        <li><%= link_to "My Bookmarks", profile_path %></li>
+        <% end %>
 
 
         <div class="pull-right">

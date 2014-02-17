@@ -15,8 +15,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
-		@bookmarks = @user.bookmarks.visible_to(current_user)
+		@user = params[:id] ? User.find(params[:id]) : current_user
+
 	end
 
 	def edit

@@ -9,8 +9,13 @@ Postmarks::Application.routes.draw do
   get 'about' => 'welcome#about'
   get 'tags/:tag', to: 'bookmarks#index', as: :tag
 
+  get 'profile' => 'users#show'
 
-  resources :users, only: [:show] #route for users#show
+  resources :users, only: [:show, :create] #route for users#show
+  # POST /users
+  resources :sessions, only: [:create, :new]
+  # GET /sessions/new
+  # POST /sessions
 
   
     resources :bookmarks, only: [:index, :create, :show, :update, :destroy, :edit] do

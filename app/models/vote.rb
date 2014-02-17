@@ -8,4 +8,6 @@ class Vote < ActiveRecord::Base
   def update_bookmark
   	self.bookmark.update_rank
   end
+
+  #after_save
 end
