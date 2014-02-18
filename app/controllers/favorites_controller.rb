@@ -28,8 +28,8 @@ class FavoritesController < ApplicationController
 		end 
 	end
 
-	def favorites
-		
+	def index
+		@favorites = Favorite.all
   end
 
 
