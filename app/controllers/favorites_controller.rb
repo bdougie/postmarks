@@ -28,9 +28,10 @@ class FavoritesController < ApplicationController
 		end 
 	end
 
-	def index
+	def favorites
+		
+  end
 
-	end
 
 	
 end

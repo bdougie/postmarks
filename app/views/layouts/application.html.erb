@@ -18,7 +18,7 @@
         <li><%= link_to "Postmarks", "#" %></li>
         <li><%= link_to "View Bookmarks", bookmarks_path  %></li>
         <% if current_user %>
-        <li><%= link_to "Favorited Bookmarks", '#' %></li>
+        <li><%= link_to "Favorited Bookmarks", favorites_path %></li>
         <li><%= link_to "My Bookmarks", profile_path %></li>
         <% end %>
 
