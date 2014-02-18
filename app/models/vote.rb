@@ -5,9 +5,10 @@ class Vote < ActiveRecord::Base
 
   validates :value, inclusion: { in: [-1,1], message: "%{value} is not a valid vote."}
 
+  after_save bookmark: :update_rank
+
   def update_bookmark
   	self.bookmark.update_rank
   end
 
-  #after_save
 end

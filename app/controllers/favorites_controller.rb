@@ -27,4 +27,10 @@ class FavoritesController < ApplicationController
 			redirect_to [@bookmark]
 		end 
 	end
+
+	def index
+
+	end
+
+	
 end
