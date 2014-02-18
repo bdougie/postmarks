@@ -13,7 +13,11 @@
 
 /*.item {
   margin: 5px;
-  width: 200px;
+  max-width: 200px;
+  min-width: 50;
+  max-length: 250px;
+
+
 
 }
 
