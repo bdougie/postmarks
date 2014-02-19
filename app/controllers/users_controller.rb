@@ -2,15 +2,13 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
-		# @user.set_attribute(:role 'member')
-		# @user.save
 	end
 
 	def create
 		@user = User.new(params[:user])
+		@user.role = :member
 		if @user.save
 			session[:user_id] = @user.id
-			# @user.set_attribute(:role 'member')
 			redirect_to root_url, notice: "Thank you for signing up!"
 		else
 			render "new"
