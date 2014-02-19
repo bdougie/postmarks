@@ -8,7 +8,7 @@ class Bookmark < ActiveRecord::Base
    before_save :save_embedly_data
 
    default_scope order('rank DESC')
-   scope :visible_to, lambda { |user| user ? scoped : joins(:bookmark).where('bookmark.favorited' => true) }
+   # scope :visible_to, lambda { |user| user ? scoped : joins(:bookmark).where('bookmark.favorited' => true) }
 
    belongs_to :user
 

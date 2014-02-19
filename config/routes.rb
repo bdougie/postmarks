@@ -6,7 +6,7 @@ Postmarks::Application.routes.draw do
   post 'login' => 'sessions#create'
   post '/email_processor' => 'griddler/emails#create'
   
-  get 'favorites' => 'favorties#show'
+  get 'favorites' => 'favorites#show'
   get 'about' => 'welcome#about'
   get 'tags/:tag', to: 'bookmarks#index', as: :tag
 

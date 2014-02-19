@@ -28,7 +28,7 @@ class FavoritesController < ApplicationController
 		end 
 	end
 
-	def favorites
+	def show
 		
   end
 
