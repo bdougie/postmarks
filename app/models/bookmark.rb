@@ -5,6 +5,7 @@ class Bookmark < ActiveRecord::Base
    has_many :votes, dependent: :destroy
    has_many :favorites, dependent: :destroy
 
+   before_create :set_initial_rank
    before_save :save_embedly_data
 
    default_scope order('rank DESC')
@@ -39,6 +40,12 @@ class Bookmark < ActiveRecord::Base
    end
 
    private
+
+   # Possible alternative: after_create, create a +1 vote for the User the Bookmark belongs to
+   # (forcing rank update)
+   def set_initial_rank
+      self.rank = 0
+   end
 
    def create_vote
       self.user.votes.create(value: 1, bookmark: self)

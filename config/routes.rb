@@ -6,7 +6,7 @@ Postmarks::Application.routes.draw do
   post 'login' => 'sessions#create'
   post '/email_processor' => 'griddler/emails#create'
   
-  get 'favorites' => 'favorites#show'
+
   get 'about' => 'welcome#about'
   get 'tags/:tag', to: 'bookmarks#index', as: :tag
 
@@ -18,12 +18,13 @@ Postmarks::Application.routes.draw do
   # GET /sessions/new
   # POST /sessions
 
-  
-    resources :bookmarks, only: [:index, :create, :show, :update, :destroy, :edit] do
-      match '/up-vote', to: 'votes#up_vote', as: :up_vote
-      match '/down-vote', to: 'votes#down_vote', as: :down_vote
-      resources :favorites, only: [:create, :destroy]
-    end
+
+  resources :favorites, only: [:index]
+  resources :bookmarks, only: [:index, :create, :show, :update, :destroy, :edit] do
+    match '/up-vote', to: 'votes#up_vote', as: :up_vote
+    match '/down-vote', to: 'votes#down_vote', as: :down_vote
+    resources :favorites, only: [:create, :destroy]
+  end
 
 
   root :to => 'welcome#index' 
