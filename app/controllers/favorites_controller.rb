@@ -30,7 +30,7 @@ class FavoritesController < ApplicationController
 
 
 	def index
-		@favorites = Favorite.all
+		@bookmarks = current_user.favorited_bookmarks
   end
 
 

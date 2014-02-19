@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorited_bookmarks, through: :favorites, source: :bookmark
 
 
   def favorited(bookmark)
