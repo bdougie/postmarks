@@ -18,12 +18,6 @@ As a user, I want to see a list of bookmarks on my personal index that I've adde
 
 *With the combination of Griddler and Cloudmailin post are created via email.
  
-*Blockmarks needs to have Users
 
-*User will have the ability to send bookmarks from email
-
-*As well as post inline.
-
-*Each #hash will be a topic
  
 
